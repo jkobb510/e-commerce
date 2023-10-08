@@ -25,3 +25,43 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+.product {
+  background-color: #000000;
+  border: 1px solid #7f7b7b;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  width: 300px;
+}
+
+.product img {
+  max-width: 250px;
+  height: auto;
+  margin: 10px auto;
+}
+.price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 10px;
+  text-align: center;
+
+}
+section.featured-products {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}
