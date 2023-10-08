@@ -5,7 +5,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between p-8">
       <div className="grid text-center lg:max-w-2xl lg:xl lg:w-full lg:mb- lg:grid-cols-4 lg:text-center">
         <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          href="/about"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
           rel="noopener noreferrer"
@@ -16,7 +16,7 @@ export default function Home() {
         </a>
 
         <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+          href="/shop.tsx"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
           rel="noopener noreferrer"
@@ -27,7 +27,7 @@ export default function Home() {
         </a>
 
         <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          href="/cart.tsx"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
           rel="noopener noreferrer"
@@ -38,7 +38,7 @@ export default function Home() {
         </a>
 
         <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          href="/contact.tsx"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
           rel="noopener noreferrer"
@@ -50,9 +50,9 @@ export default function Home() {
       </div>
       <section className="featured-products">
   <div className="product">
-  <div className="product-image image-container">
-
-    <img src="/table.png" alt="Product 1" /></div>
+    <div className="product-image image-container">
+      <img src="/table.png" alt="Product 1" />
+    </div>
     <h3>Table</h3>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     <span className="price block">$99.99</span>
@@ -61,7 +61,7 @@ export default function Home() {
 
   <div className="product">
     <div className="product-image image-container">
-    <img  src="/coffee.png" alt="Product 2" />
+      <img  src="/coffee.png" alt="Product 2" />
     </div>
     <h3>Coffee Cup</h3>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -70,8 +70,7 @@ export default function Home() {
   </div>
   <div className="product">
   <div className="product-image image-container">
-
-    <img src="/knife.png" alt="Product 2" />
+      <img src="/knife.png" alt="Product 2" />
     </div>
     <h3>Knife Set</h3>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
