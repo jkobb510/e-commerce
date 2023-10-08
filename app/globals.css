@@ -40,9 +40,9 @@ body {
   object-fit: cover; 
 }
 .image-container {
-  width: 270px; /* Set the desired width of the image container */
-  height: 270px; /* Set the desired height of the image container */
-  overflow: hidden; /* Hide any overflow content */
+  width: 270px; 
+  height: 270px; 
+  overflow: hidden;
 }
 .price {
   font-size: 18px;
