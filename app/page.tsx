@@ -10,7 +10,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
+          <h2 className={`text-2xl font-semibold`}>
             About{''}
           </h2>
         </a>
@@ -21,7 +21,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
+          <h2 className={`text-2xl font-semibold`}>
             Shop{' '}
           </h2>
         </a>
@@ -32,7 +32,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
+          <h2 className={`text-2xl font-semibold`}>
             Cart{' '}
           </h2>
         </a>
@@ -43,7 +43,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
+          <h2 className={`text-2xl font-semibold`}>
             Contact{' '}
           </h2>
         </a>
@@ -61,7 +61,7 @@ export default function Home() {
 
   <div className="product">
     <div className="product-image image-container">
-      <img  src="/coffee.png" alt="Product 2" />
+      <img src="/coffee.png" alt="Product 2" />
     </div>
     <h3>Coffee Cup</h3>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
