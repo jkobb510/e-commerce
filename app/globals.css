@@ -1,4 +1,7 @@
 /* globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -12,79 +15,67 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));}
-
-form {
-  border: 3px solid #f1f1f1;
+    color: rgb(var(--foreground-rgb));
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgb(var(--background-end-rgb))
+      )
+      rgb(var(--background-start-rgb));
 }
 
-input[type="text"],
-input[type="password"] {
-  width: 200px;
-  padding: 10px 10px;
-  margin: 10px;
-  display: block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
-button {
-  color: rgb(45, 44, 44);
-  padding: 12px 20px;
-  margin: 10px 0;
-  margin-left: 20%;
-  margin-right: 20%;
-  margin-top: 20px;
-  border: none;
-  cursor: pointer;
-}
-
-button:hover {
-  opacity: 0.8;
-}
-
-.remember-me {
-  display: flex;
-  align-items: column;
-  margin-top: 5px;
-  justify-content: center;
-
-}
-
-.flex-column {
-  display: flex;
-  flex-direction: column;
+  button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 5px;
+  }
   
-}
+  button:hover {
+    background-color: #555;
+  }
+  h3{
+    font-weight: bold;
+  }
 
-span.psw {
-  float: left;
-  padding-top: 13px;
-  margin-left: 20%;
-  display: block;
-  justify-content: center;
 
-}
 
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 500px) {
-  span.psw {
+  .product {
+    background-color: #000000;
+    border: 1px solid #7f7b7b;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 300px;
+  }
+  
+  .product img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    margin-left: 7px;
+  }
+  .image-container {
+    width: 270px; 
+    height: 270px; 
+    overflow: hidden;
+    margin-bottom: 5px;
+  }
+  .price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 10px;
+    text-align: center;
+  
+  }
+  section.featured-products {
+    padding: 20px;
     display: flex;
     justify-content: center;
-    
+    flex-wrap: wrap;
   }
-}
