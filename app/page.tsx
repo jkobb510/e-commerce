@@ -4,28 +4,18 @@ import React from 'react';
 
 export default function Home() {
 return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-8">
-      <div className="grid text-center lg:max-w-2xl lg:xl lg:w-full lg:mb- lg:grid-cols-4 lg:text-center">
+    <main className="flex min-h-screen flex-col items-center justify-between p-0">
+      <div className='grid justify-items-center lg:max-w-20xl lg:xl lg:w-full lg:mx-auto bg-indigo-950'>
+      <div className="grid text-center lg:max-w-2xl lg:xl lg:w-full lg:grid-cols-4 lg:text-center">
         <a
           href="/about"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <h2 className={`text-2xl font-semibold`}>
+          <h4 className={`text-1xl font-semibold`}>
             About{''}
-          </h2>
-        </a>
-
-        <a
-          href="/login"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`text-2xl font-semibold`}>
-            Login{''}
-          </h2>
+          </h4>
         </a>
 
         <a
@@ -34,9 +24,9 @@ return (
           target="_blank"
           rel="noopener noreferrer"
         >
-          <h2 className={`text-2xl font-semibold`}>
+          <h4 className={`text-1xl font-semibold`}>
             Cart{''}
-          </h2>
+          </h4>
         </a>
 
         <a
@@ -45,10 +35,21 @@ return (
           target="_blank"
           rel="noopener noreferrer"
         >
-          <h2 className={`text-2xl font-semibold`}>
+          <h4 className={`text-1xl font-semibold`}>
             Contact{' '}
-          </h2>
+          </h4>
         </a>
+        <a
+          href="/login"
+          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <h4 className={`text-1xl font-semibold`}>
+            Login{''}
+          </h4>
+        </a>
+      </div>
       </div>
       <section className="featured-products">
   <div className="product">
