@@ -9,12 +9,12 @@ export default function Login() {
 
   const handleLogin = () => {
     // Add your login logic here
-    router.push('/shop.tsx');
+    router.push('/');
   };
   return (
     <div className="main-content">
     <main className="flex min-h-screen flex-col items-center justify-between p-0 ">
-      <div className='grid justify-items-center lg:max-w-20xl lg:xl lg:w-full lg:mx-auto bg-indigo-950'>
+      <div className='grid justify-items-center lg:max-w-20xl lg:xl lg:w-full lg:mx-auto bg-gray-200'>
       <div className="grid text-center lg:max-w-2xl lg:xl lg:w-full lg:grid-cols-3 lg:text-center">
         <a
           href="/about"
@@ -22,7 +22,7 @@ export default function Login() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <h4 className={`text-1xl font-semibold`}>
+          <h4 className={`text-1xl`}>
             About{''}
           </h4>
         </a>
@@ -33,7 +33,7 @@ export default function Login() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <h4 className={`text-1xl font-semibold`}>
+          <h4 className={`text-1xl`}>
             Shop{''}
           </h4>
         </a>
@@ -45,14 +45,14 @@ export default function Login() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <h4 className={`text-1xl font-semibold`}>
+          <h4 className={`text-1xl`}>
             Contact{' '}
           </h4>
         </a>
       </div>
         </div>
     <div className="container-white">
-        <img src="/logo.jpeg" alt="Logo" className="logo" />
+        <img src="/e-commercelogo.png" alt="Logo" className="logo" />
 
     <input type="text" placeholder="Username" name="uname" required />
 

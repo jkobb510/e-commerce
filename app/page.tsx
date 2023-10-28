@@ -3,9 +3,10 @@ import Link from 'next/link'
 import React from 'react';
 
 export default function Home() {
+
 return (
     <main className="flex min-h-screen flex-col items-center justify-between p-0">
-      <div className='grid justify-items-center lg:max-w-20xl lg:xl lg:w-full lg:mx-auto bg-indigo-950'>
+      <div className='grid justify-items-center lg:max-w-20xl lg:xl lg:w-full lg:mx-auto bg-gray-200'>
       <div className="grid text-center lg:max-w-2xl lg:xl lg:w-full lg:grid-cols-4 lg:text-center">
         <a
           href="/about"
@@ -13,7 +14,7 @@ return (
           target="_blank"
           rel="noopener noreferrer"
         >
-          <h4 className={`text-1xl font-semibold`}>
+          <h4 className={`text-1xl`}>
             About{''}
           </h4>
         </a>
@@ -24,7 +25,7 @@ return (
           target="_blank"
           rel="noopener noreferrer"
         >
-          <h4 className={`text-1xl font-semibold`}>
+          <h4 className={`text-1xl`}>
             Cart{''}
           </h4>
         </a>
@@ -35,7 +36,7 @@ return (
           target="_blank"
           rel="noopener noreferrer"
         >
-          <h4 className={`text-1xl font-semibold`}>
+          <h4 className={`text-1xl`}>
             Contact{' '}
           </h4>
         </a>
@@ -45,7 +46,7 @@ return (
           target="_blank"
           rel="noopener noreferrer"
         >
-          <h4 className={`text-1xl font-semibold`}>
+          <h4 className={`text-1xl`}>
             Login{''}
           </h4>
         </a>
@@ -78,9 +79,11 @@ return (
     <h3>Knife Set</h3>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     <span className="price block">$79.99</span>
-    <button>Add to Cart</button>
+        <button>Add To Cart</button>
   </div>
+
 </section>
     </main>
+    
   )
 }
