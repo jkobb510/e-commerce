@@ -1,48 +1,28 @@
 'use client';
+import Image from 'next/image'
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import 'app/login/page.css';
+import Link from 'next/link';
 export default function Login() {
   const router = useRouter();
-  const [loginData, setLoginData] = useState({
-    username: '',
-    password: ''
-  });
-  const handleLogin = async () => {
-    try {
-    const response = await fetch('http://localhost:3000/auth/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(loginData)
-    });
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [isAuthorized, setIsAuthorized] = useState(false);
 
-    if (response.ok) {
-      const data = await response.json();
-      const { token } = data;
+  const handleLogin = () => {
+    console.log('Username:', username);
+    console.log('Password:', password);
+    const isAuthorized = username === 'john' && password === 'changeme';
 
-      // Store the token in localStorage or any other secure storage
-      localStorage.setItem('token', token);
+        setIsAuthorized(isAuthorized);
 
-      // Redirect to the profile page or perform any other action
-      router.push('/profile');
+    if (isAuthorized) {
+      router.push('/');
     } else {
-      // Handle login error
       console.error('Login failed');
     }
-  } catch (error) {
-    // Handle network or server error
-    console.error('An error occurred while logging in:', error);
-  }
-};
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target;
-    setLoginData({
-      ...loginData,
-      [name]: value
-  })
-  };
+    };
   return (
     <div className="main-content">
     <main className="flex min-h-screen flex-col items-center justify-between p-0 ">
@@ -72,23 +52,13 @@ export default function Login() {
 
 
         <a
-          href="/contact"
+          href="/contact.tsx"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
           rel="noopener noreferrer"
         >
           <h4 className={`text-1xl`}>
-            Contact{''}
-          </h4>
-        </a>
-        <a
-          href="/cart"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h4 className={`text-1xl`}>
-            Cart{''}
+            Contact{' '}
           </h4>
         </a>
       </div>
@@ -99,17 +69,19 @@ export default function Login() {
       <input
         type="text"
         placeholder="Username"
-        name="username"
-        value={loginData.username}
-        onChange={handleInputChange}
+        name="uname"
+        required
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
       />
       
     <input
         type="password"
         placeholder="Password"
-        name="password"
-        value={loginData.password}
-        onChange={handleInputChange}
+        name="psw"
+        required
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
       />
 
     <div className="flex-column">
@@ -117,12 +89,14 @@ export default function Login() {
         <input className='space' type="checkbox"  name="remember" />
         <label htmlFor="remember">Remember me</label>
       </div>
-
       <button className="login-button" type="submit" onClick={handleLogin}>
         Login
       </button>
-
-      <button className="login-button" type="submit" onClick={() => router.push('/register')}>
+      <button
+        className="login-button"
+        type="submit"
+        onClick={() => router.push('/register')}
+      >
         Register
       </button>
 
