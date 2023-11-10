@@ -1,8 +1,9 @@
  'use client';
 import React from 'react';
+import 'app/globals.css'
 import 'app/cart/page.css'
 
-export default function Home() {
+export default function Cart() {
 
 return (
     <main className="min-h-screen flex-col items-center justify-between p-0">
@@ -56,8 +57,8 @@ return (
       If cart is empty, display this message vs. if not, display the cart
       */}
     <h2 className='your-cart'>Your Cart</h2>
-      <section className="cart-products flex">
-        <div className="cart-product-container">
+      <section className="featured-products">
+        <div className="product-image">
             <div className="image-container">
                     <img src="/table.png" alt="Product 1" />
                 </div>

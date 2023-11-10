@@ -9,12 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@nestjs/passport": "^10.0.2",
     "next": "^13.5.4",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/node": "^20",
+    "@types/passport-local": "^1.0.38",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10",
