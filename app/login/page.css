@@ -31,7 +31,6 @@ body {
   }
 
 form {
-  border: 3px solid #000000;
   color: #000000;
 }
 
@@ -88,7 +87,6 @@ button:hover {
 }
 span.psw {
   display: block;
-  color: rgb(39, 10, 102);
   justify-content: center;
   background-color: rgb(255, 255, 255);
   align-items: center;

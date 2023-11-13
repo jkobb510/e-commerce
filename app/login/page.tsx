@@ -1,10 +1,11 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import 'app/globals.css'
 import 'app/login/page.css';
 
 export default function Login() {
+
   const router = useRouter();
   const [loginData, setLoginData] = useState({
     username: '',
@@ -16,9 +17,7 @@ export default function Login() {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiam9obiIsImlhdCI6MTY5ODU0NjgzMSwiZXhwIjoxNjk4NTQ2ODkxfQ.b8gFuD-h4rgiJiVMAeFoQe0JegaqELGbmlcE8q6R6SQ',
-      },
-        //body: JSON.stringify({ username: 'john', password: 'changeme' }),
+      }, 
 
       body: JSON.stringify(loginData)
     });
@@ -42,7 +41,33 @@ export default function Login() {
       ...loginData,
       [id]: value
   });
+      event.preventDefault();
   };
+  const accessToken = typeof window !== 'undefined' ? localStorage.getItem('token') : null;
+  const [profileData, setProfileData] = useState(null);
+  useEffect(() => {
+    const fetchProfileData = async () => {
+      if (accessToken) {
+        try {
+          const response = await fetch('http://localhost:3000/profile', {
+            headers: {
+              'Authorization': `Bearer ${accessToken}`,
+            },
+          });
+
+          if (response.ok) {
+            const data = await response.json();
+            setProfileData(data);
+          } else {
+            console.error('Profile request failed');
+          }
+        } catch (error) {
+          console.error('An error occurred while fetching profile:', error);
+        }
+      }
+    };
+       fetchProfileData();
+  }, [accessToken]);
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-0">
       <div className="header-bar-container grid justify-items-center lg:max-w-20xl lg:xl lg:w-full lg:mx-auto bg-gray-200">
@@ -94,13 +119,13 @@ export default function Login() {
         </div>
         <div className='container-white'>
         <img src="/e-commercelogo.png" alt="Logo" className="logo" />
-      <form onSubmit={ handleLogin }>
+      <form onSubmit={ handleLogin } >
       <label htmlFor="username">Username</label>
 
       <input
         type="text"
         id="username"
-        name="Username"
+        name="username"
         value={loginData.username}
         onChange={handleInputChange}
       />
@@ -109,31 +134,31 @@ export default function Login() {
     <input
         type="password"
         id="password"
-        name="Password"
+        name="password"
         value={loginData.password}
         onChange={handleInputChange}
 
       />
-      <button className="login-button" type="submit" onClick={handleLogin}>
-        Login
-      </button>
-    </form>
+      </form>
+
 
     <div className="flex-column">
       <div className="remember-me">
         <input className='space' type="checkbox"  name="remember" />
         <label htmlFor="remember">Remember me</label>
       </div>
-
-
+      <button className="login-button" type="submit" onClick={handleLogin}>
+        Login
+      </button>
 
       <button className="login-button" type="submit" onClick={() => router.push('/register')}>
         Register
       </button>
-  <div className="container" style={{ backgroundColor: '#f1f1f1' }}>
+  <div className="container">
     <span className="psw">Forgot <a href="#">password?</a></span>
   </div>
 </div>
+
 </div>
 </main>
 );
