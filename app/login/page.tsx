@@ -1,73 +1,49 @@
-'use client';
 import React, { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
-import 'app/globals.css'
+import { useRouter } from 'next/router';
+import 'app/globals.css';
 import 'app/login/page.css';
+import axios from 'axios';
 
 export default function Login() {
-
   const router = useRouter();
   const [loginData, setLoginData] = useState({
     username: '',
     password: '',
   });
-  const handleLogin = async () => {
-    try {
-    const response = await fetch('http://localhost:3000/auth/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      }, 
-
-      body: JSON.stringify(loginData)
-    });
-      if (response.ok) {
-      const data = await response.json();
-      const { token } = data;
-      localStorage.setItem('token', token);
-      router.push('/');
-    } else {
-      // Handle login error
-      console.error('Login failed');
-    }
-  } catch (error) {
-    // Handle network or server error
-    console.error('An error occurred while logging in:', error);
-  }
-};
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value } = event.target;
     setLoginData({
       ...loginData,
-      [id]: value
-  });
-      event.preventDefault();
+      [id]: value,
+    });
   };
-  const accessToken = typeof window !== 'undefined' ? localStorage.getItem('token') : null;
-  const [profileData, setProfileData] = useState(null);
-  useEffect(() => {
-    const fetchProfileData = async () => {
-      if (accessToken) {
-        try {
-          const response = await fetch('http://localhost:3000/profile', {
-            headers: {
-              'Authorization': `Bearer ${accessToken}`,
-            },
-          });
 
-          if (response.ok) {
-            const data = await response.json();
-            setProfileData(data);
-          } else {
-            console.error('Profile request failed');
-          }
-        } catch (error) {
-          console.error('An error occurred while fetching profile:', error);
-        }
+  const handleLogin = async (event: React.FormEvent) => {
+    event.preventDefault();
+    
+    try {
+      const response = await fetch('http://localhost:3000/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(loginData),
+      });
+
+      if (response.ok) {
+        const { token } = await response.json();
+        localStorage.setItem('token', token);
+        // Redirect or perform necessary action upon successful login
+      } else {
+        console.error('Login failed');
+        // Handle login error on the UI
       }
-    };
-       fetchProfileData();
-  }, [accessToken]);
+    } catch (error) {
+      console.error('An error occurred while logging in:', error);
+      // Handle network or server error on the UI
+    }
+  };
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-0">
       <div className="header-bar-container grid justify-items-center lg:max-w-20xl lg:xl lg:w-full lg:mx-auto bg-gray-200">
