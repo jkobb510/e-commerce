@@ -123,5 +123,8 @@ h3 {
     margin: 10px;
     padding: 10px;
     text-align: center;
-    color: #000000;   
+    color: #000000; 
+    font-size: 30px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;  
 }

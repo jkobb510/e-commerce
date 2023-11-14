@@ -6,7 +6,7 @@ import './globals.css'
 export default function Home() {
 
 return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-0">
+    <main className="min-h-screen flex-col items-center justify-between p-0">
       <div className="header-bar-container grid justify-items-center lg:max-w-20xl lg:xl lg:w-full lg:mx-auto bg-gray-200">
         <div className="header-bar grid text-center lg:max-w-2xl lg:xl lg:w-full lg:grid-cols-4 lg:text-center">
         <a
@@ -53,6 +53,7 @@ return (
         </a>
       </div>
       </div>
+      <h1>Shop</h1>
       <section className="featured-products">
   <div className="product">
     <div className="product-image image-container">
